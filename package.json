@@ -1,0 +1,10 @@
+{
+  "name": "hospital_management_system",
+  "version": "1.0.0",
+  "scripts": {
+    "full": "concurrently \"npm run server --prefix backend\" \"npm run dev --prefix frontend\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
