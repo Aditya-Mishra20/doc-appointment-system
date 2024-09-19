@@ -22,6 +22,7 @@ const Login = () => {
       } else {
         message.error(res.data.message);
       }
+      window.location.reload();
     } catch (error) {
       dispatch(hideLoading());
       console.log(error);
