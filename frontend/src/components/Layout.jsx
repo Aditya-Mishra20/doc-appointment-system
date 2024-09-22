@@ -60,7 +60,7 @@ const Layout = ({ children }) => {
           }  bg-[#1A1A1A] w-3/4 sm:w-1/4 md:w-2/6 lg:w-1/4 lg:block h-full rounded-lg border border-[#2E2E2E] absolute sm:relative z-10`}
         >
           <div className="logo text-center flex items-center justify-around bg-[#292929] rounded-t-lg text-white text-2xl p-3 ]">
-            <h1>Docnock</h1>
+            <h1>DocSlot</h1>
             <button onClick={() => setIsOpen(false)} className="lg:hidden">
               <i className="fa-solid fa-xmark"></i>
             </button>

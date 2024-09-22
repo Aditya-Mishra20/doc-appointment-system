@@ -22,11 +22,20 @@ app.use(morgan("dev"));
 //routes
 app.use("/api/v1/user", router);
 app.use("/api/v1/admin", adminRouter);
-app.use("/api/v1/doctor", doctorRouter)
+app.use("/api/v1/doctor", doctorRouter);
 
-//port
-const port = process.env.PORT || 3000;
-//listen port
-app.listen(port, () => {
-  console.log(`server running in fine.`);
+app.get("/", (req, res) => {
+  res.send("hello from backend!");
 });
+
+if (process.env.DEV_MODE === "development") {
+  //port
+  const port = process.env.PORT || 3000;
+  //listen port
+  app.listen(port, () => {
+    console.log(`server running in fine.`);
+  });
+}
+
+
+export default app;
