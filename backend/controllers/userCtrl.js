@@ -1,7 +1,6 @@
 import { User } from "../models/userModels.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import moment from "moment";
 import { Doctor } from "../models/doctorModel.js";
 import { Appointment } from "../models/appointmentModel.js";
 
@@ -25,7 +24,7 @@ export const registerController = async (req, res) => {
       .status(201)
       .send({ message: "Registered Successfully!", success: true });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
       message: `Register Controller : ${error.message}`,
@@ -58,7 +57,7 @@ export const loginController = async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({ message: `Error in Login CTRL:  ${error.message}` });
   }
 };
@@ -78,7 +77,7 @@ export const authController = async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({ message: "auth error", success: false, error });
   }
 };
@@ -104,7 +103,7 @@ export const applyDoctorController = async (req, res) => {
       message: "Doctor Account Applied Successfully.",
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res
       .status(500)
       .send({ message: "error while applying doctor", success: false, error });
@@ -126,7 +125,7 @@ export const getAllNotificationController = async (req, res) => {
       data: updatedUser,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       message: "error in getting notification",
       success: false,
@@ -148,7 +147,7 @@ export const deleteAllNotificationController = async (req, res) => {
       data: updatedUser,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       message: "error deleting notifications!",
       success: false,
@@ -167,7 +166,7 @@ export const getAllDoctorsController = async (req, res) => {
       data: doctors,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
       message: "error while fetching doctors.",
@@ -180,8 +179,6 @@ export const getAllDoctorsController = async (req, res) => {
 
 export const bookAppointmentController = async (req, res) => {
   try {
-    // console.log("req ::", req.body);
-
     req.body.status = "pending";
     const newAppointment = new Appointment(req.body);
     await newAppointment.save();
@@ -197,7 +194,7 @@ export const bookAppointmentController = async (req, res) => {
       message: "appointment book successfully",
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
       message: " appointment booking failed! ",
@@ -233,7 +230,7 @@ export const bookingAvailabilityController = async (req, res) => {
       }
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
       message: "Error in Booking",
@@ -251,7 +248,7 @@ export const userAppointmentController = async (req, res) => {
       data: appointments,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
       message: "Failed Listing Appointments!",

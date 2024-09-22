@@ -34,7 +34,7 @@ const ProtectedRoutes = ({ children }) => {
     } catch (error) {
       dispatch(hideLoading());
       localStorage.clear();
-      console.log(error);
+      console.error(error);
     }
   };
 

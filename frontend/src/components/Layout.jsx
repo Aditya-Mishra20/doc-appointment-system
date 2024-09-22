@@ -9,11 +9,10 @@ const Layout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useSelector((state) => state.user);
 
-  // console.log(user);
+
   const location = useLocation();
   const navigate = useNavigate();
-  // console.log(adminMenu);
-  // console.log(user?.isAdmin);
+
 
   const handleLogout = () => {
     localStorage.clear();

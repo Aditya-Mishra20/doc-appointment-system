@@ -16,7 +16,7 @@ const Doctors = () => {
         setDoctors(res.data.data);
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
       message.error("Error while fetching doctor list.");
     }
   };
@@ -42,7 +42,7 @@ const Doctors = () => {
         res.data.data;
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
       message.error("error handling account status");
     }
   };

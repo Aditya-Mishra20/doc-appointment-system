@@ -3,7 +3,6 @@ import Layout from "../../components/Layout";
 import { message, Table } from "antd";
 import axios from "axios";
 
-
 const Appointments = () => {
   const [appointmentList, setAppointmentList] = useState([]);
 
@@ -16,10 +15,9 @@ const Appointments = () => {
       });
       if (res.data.success) {
         setAppointmentList(res.data.data);
-        console.log(res.data.data)
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
       message.error(res.data.message);
     }
   };

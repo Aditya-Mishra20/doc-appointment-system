@@ -19,7 +19,7 @@ const HomePage = () => {
         }
       );
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -34,7 +34,7 @@ const HomePage = () => {
         setDoctors(res.data.data);
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

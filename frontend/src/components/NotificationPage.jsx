@@ -154,7 +154,7 @@ const NotificationPage = () => {
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log(error);
+      console.error(error);
       message.error("Something went wrong!");
     }
   };
@@ -183,7 +183,7 @@ const NotificationPage = () => {
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log(error);
+      console.error(error);
       message.error("Something went wrong!");
     }
   };

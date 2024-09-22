@@ -8,7 +8,6 @@ export default async (req, res, next) => {
   // whereas , normal data like form data present in body section req
   // in jsonwebtoken there is Bearer naming convention so we need to split
   try {
-    // console.log("req", req.body);
     const token = req.headers["authorization"].split(" ")[1];
     jwt.verify(token, process.env.JWT_SECRET, (error, decode) => {
       if (error) {
@@ -21,7 +20,7 @@ export default async (req, res, next) => {
       }
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(401).send({ message: "Auth Failed!!!!", success: false });
   }
 };

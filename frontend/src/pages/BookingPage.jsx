@@ -26,7 +26,6 @@ const BookingPage = () => {
   const docId = params.doctorId;
 
   const getDocInfo = async () => {
-    // console.log("params : ", params);
     try {
       const res = await axios.post(
         "/api/v1/doctor/getDoctorById",
@@ -43,14 +42,12 @@ const BookingPage = () => {
         setDoctor(res.data.data);
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
   //   ***************** handleBooking ***********************
 
   const handleBooking = async (values) => {
-
-
     try {
       dispatch(showLoading());
       const res = await axios.post(
@@ -76,8 +73,7 @@ const BookingPage = () => {
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log("params:", params);
-      console.log("error in book appointment :", error);
+      console.error("error in book appointment :", error);
     }
   };
 
@@ -111,7 +107,7 @@ const BookingPage = () => {
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log(error);
+      console.error(error);
     }
   };
 

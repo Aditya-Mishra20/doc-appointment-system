@@ -26,7 +26,6 @@ const Profile = () => {
   // ********************** update doctor profile *************************
   //handle form
   const handleFinish = async (values) => {
-    console.log(values);
     try {
       dispatch(showLoading());
       const res = await axios.post(
@@ -47,7 +46,7 @@ const Profile = () => {
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log(error);
+      console.error(error);
       message.error("Something went wrong!");
     }
   };
@@ -72,7 +71,7 @@ const Profile = () => {
         setDoctorInfo(res.data.data);
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
       message.error("Unable to get Info");
     }
   };

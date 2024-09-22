@@ -17,16 +17,12 @@ const ApplyDoctor = () => {
   const { user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(user);
+  console.error(user);
 
   //handle form
   const handleFinish = async (values) => {
-    console.log(values);
+    console.error(values);
     const time = values.timing.map((ts) => new Date(ts));
-
-
-   
-
 
     try {
       dispatch(showLoading());
@@ -53,7 +49,7 @@ const ApplyDoctor = () => {
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log(error);
+      console.error(error);
       message.error("Something went wrong!");
     }
   };

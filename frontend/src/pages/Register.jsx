@@ -15,9 +15,6 @@ const Register = () => {
       dispatch(showLoading());
       const response = await axios.post("/api/v1/user/register", values);
       dispatch(hideLoading());
-      console.log(response.data);
-      console.log(response.data.success);
-      console.log(response.data.message);
       if (response.data.success) {
         message.success("Registered Successfully!!!");
         navigate("/");
@@ -27,7 +24,7 @@ const Register = () => {
       }
     } catch (error) {
       dispatch(hideLoading());
-      console.log(error);
+      console.error(error);
       message.error("Something went wrong!");
     }
   };

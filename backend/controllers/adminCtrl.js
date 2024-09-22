@@ -10,7 +10,7 @@ export const getAllUsersController = async (req, res) => {
       data: users,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
       message: " error while getting users",
@@ -27,7 +27,7 @@ export const getAllDoctorsController = async (req, res) => {
       data: doctors,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
       message: " error while getting doctors",
@@ -39,7 +39,7 @@ export const getAllDoctorsController = async (req, res) => {
 // doctor account status
 export const changeAccountStatusController = async (req, res) => {
   
-  console.log("Request body:", req.body);
+
   try {
     const { doctorId, status } = req.body;
     const doctor = await Doctor.findByIdAndUpdate(doctorId, { status },{ new: true });
@@ -53,14 +53,13 @@ export const changeAccountStatusController = async (req, res) => {
     });
     user.isDoctor = doctor.status === "approved" ? true : false;
     await user.save();
-    console.log("User updated successfully:", user);
     res.status(201).send({
       success: true,
       message: "Account Status Updated.",
       data: doctor,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
       message: "error in changing account status",

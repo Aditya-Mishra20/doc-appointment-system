@@ -18,7 +18,7 @@ const Users = () => {
         setUsers(res.data.data);
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
       message.error("error displaying users");
     }
   };
@@ -65,7 +65,7 @@ const Users = () => {
       <h1 className=" text-start text-white text-3xl m-3 mb-6 ">Users List</h1>
       <ConfigProvider
         theme={{
-          components: { 
+          components: {
             Table: {
               headerBg: "#17161C",
               headerColor: "#fafafa",

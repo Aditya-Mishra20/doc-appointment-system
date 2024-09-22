@@ -10,7 +10,7 @@ export const getDoctorInfoController = async (req, res) => {
       data: doctor,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
       message: "Error in sneding doctoer details to frontend",
@@ -32,7 +32,7 @@ export const updateProfileController = async (req, res) => {
       data: doctor,
     });
   } catch (error) {
-    console.log("profile update issue : ".error);
+    console.error("profile update issue : ".error);
     res.status(500).send({
       success: false,
       message: "error updating profile",
@@ -45,8 +45,6 @@ export const updateProfileController = async (req, res) => {
 
 export const getDoctorByIdController = async (req, res) => {
   try {
-    // console.log("Request :", req.body);
-
     const doctor = await Doctor.findOne({ _id: req.body.doctorId });
 
     res.status(200).send({
@@ -55,7 +53,7 @@ export const getDoctorByIdController = async (req, res) => {
       data: doctor,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
       message: "failed getting doctor info",
@@ -66,11 +64,7 @@ export const getDoctorByIdController = async (req, res) => {
 
 export const doctorAppointmentController = async (req, res) => {
   try {
-    console.log("REq ::", req.body);
-
     const doctor = await Doctor.findOne({ userId: req.body.userId });
-
-    console.log("doctor", doctor);
 
     const appointments = await Appointment.find({
       doctorId: req.body.doctorId,
@@ -81,7 +75,7 @@ export const doctorAppointmentController = async (req, res) => {
       data: appointments,
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
       message: "Appointments fetching failed! ",
@@ -109,7 +103,7 @@ export const updateStatusController = async (req, res) => {
       message: "Appointment status updated",
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     res.status(500).send({
       success: false,
       message: "Error in update status",

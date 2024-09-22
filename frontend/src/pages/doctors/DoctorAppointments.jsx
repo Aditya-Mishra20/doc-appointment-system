@@ -15,10 +15,9 @@ const DoctorAppointments = () => {
       });
       if (res.data.success) {
         setAppointmentList(res.data.data);
-        console.log(res.data.data);
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
       message.error(res.data.message);
     }
   };
@@ -43,7 +42,7 @@ const DoctorAppointments = () => {
         getAppointmentList();
       }
     } catch (error) {
-      console.log(error);
+      console.error(error);
       message.error("something went wrong");
     }
   };

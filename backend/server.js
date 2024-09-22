@@ -28,5 +28,5 @@ app.use("/api/v1/doctor", doctorRouter)
 const port = process.env.PORT || 3000;
 //listen port
 app.listen(port, () => {
-  console.log(`server running in ${process.env.DEV_MODE} mode on port ${port}`);
+  console.log(`server running in fine.`);
 });
