@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import dotenv from "dotenv";
+import cors from "cors";
 import { connectDB } from "./config/db.js";
 import { router } from "./routes/userRoutes.js";
 import { adminRouter } from "./routes/adminRoutes.js";
