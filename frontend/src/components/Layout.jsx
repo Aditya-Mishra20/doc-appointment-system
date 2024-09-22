@@ -52,7 +52,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="main w-full h-screen flex flex-col">
-      <div className="layout w-full h-screen flex p-5 justify-between gap-5 items-center bg-[#111018]">
+      <div className="layout w-full h-screen fixed flex p-5 justify-between gap-5 items-center bg-[#111018]">
         {/* sidebar */}
         <div
           className={` ${
