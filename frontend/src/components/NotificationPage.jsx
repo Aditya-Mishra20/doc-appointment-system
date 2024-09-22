@@ -135,7 +135,7 @@ const NotificationPage = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/v1/user/get-all-notifications",
+        "https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/user/get-all-notifications",
         {
           userId: user._id,
         },
@@ -164,7 +164,7 @@ const NotificationPage = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/v1/user//delete-all-notifications",
+        "https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/user//delete-all-notifications",
         {
           userId: user._id,
         },

@@ -8,7 +8,7 @@ const Appointments = () => {
 
   const getAppointmentList = async () => {
     try {
-      const res = await axios.get("/api/v1/user/user-appointments", {
+      const res = await axios.get("https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/user/user-appointments", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

@@ -29,7 +29,7 @@ const Profile = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/v1/doctor/updateProfile",
+        "https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/doctor/updateProfile",
         { ...values, userId: user._id },
         {
           headers: {
@@ -56,7 +56,7 @@ const Profile = () => {
   const getDoctorInfo = async () => {
     try {
       const res = await axios.post(
-        "/api/v1/doctor/getDoctorInfo",
+        "https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/doctor/getDoctorInfo",
         {
           userId: params.id,
         },

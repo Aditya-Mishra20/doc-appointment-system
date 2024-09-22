@@ -28,7 +28,7 @@ const BookingPage = () => {
   const getDocInfo = async () => {
     try {
       const res = await axios.post(
-        "/api/v1/doctor/getDoctorById",
+        "https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/doctor/getDoctorById",
         {
           doctorId: docId,
         },
@@ -51,7 +51,7 @@ const BookingPage = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/v1/user/book-appointment",
+        "https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/user/book-appointment",
         {
           doctorId: params.doctorId,
           userId: user._id,
@@ -85,7 +85,7 @@ const BookingPage = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/v1/user/booking-availability",
+        "https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/user/booking-availability",
         {
           doctorId: params.doctorId,
           date: date,

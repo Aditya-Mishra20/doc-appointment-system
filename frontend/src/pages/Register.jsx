@@ -13,7 +13,7 @@ const Register = () => {
   const onFinishHandler = async (values) => {
     try {
       dispatch(showLoading());
-      const response = await axios.post("/api/v1/user/register", values);
+      const response = await axios.post("https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/user/register", values);
       dispatch(hideLoading());
       if (response.data.success) {
         message.success("Registered Successfully!!!");

@@ -27,7 +27,7 @@ const ApplyDoctor = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "/api/v1/user/apply-doctor",
+        "https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/user/apply-doctor",
         {
           ...values,
           userId: user._id,
