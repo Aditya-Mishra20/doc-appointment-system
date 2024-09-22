@@ -19,7 +19,6 @@ function App() {
   const { loading } = useSelector((state) => state.alerts);
   return (
     <>
-      
       <BrowserRouter>
         {loading ? (
           <Spinner />
@@ -67,6 +66,14 @@ function App() {
             />
             <Route
               path="/doctor/profile/:id"
+              element={
+                <ProtectedRoutes>
+                  <Profile />
+                </ProtectedRoutes>
+              }
+            />
+             <Route
+              path="/profile"
               element={
                 <ProtectedRoutes>
                   <Profile />
