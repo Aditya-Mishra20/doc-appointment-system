@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../../components/Layout";
-import { message, Table } from "antd";
+import {ConfigProvider, message, Table } from "antd";
 import axios from "axios";
 
 const Appointments = () => {
@@ -31,22 +31,22 @@ const Appointments = () => {
       title: "ID",
       dataIndex: "_id",
     },
-    // {
-    //   title: "Name",
-    //   dataIndex: "name",
-    //   render: (text, record) => {
-    //     <span>
-    //       {`${record.doctorId.firstName} ${record.doctorId.lastName}`}
-    //     </span>;
-    //   },
-    // },
-    // {
-    //   title: "Phone Number",
-    //   dataIndex: "phoneNo",
-    //   render: (text, record) => {
-    //     <span>{record.doctorId.phoneNo}</span>;
-    //   },
-    // },
+    {
+      title: "Name",
+      dataIndex: "name",
+      render: (text, record) => {
+        <span>
+          {`${record.doctorId.firstName} ${record.doctorId.lastName}`}
+        </span>;
+      },
+    },
+    {
+      title: "Phone Number",
+      dataIndex: "phoneNo",
+      render: (text, record) => {
+        <span>{record.doctorId.phoneNo}</span>;
+      },
+    },
     {
       title: "Date",
       dataIndex: "date",
@@ -63,10 +63,33 @@ const Appointments = () => {
 
   return (
     <Layout>
-      appointment
-      <div>
-        <Table columns={column} dataSource={appointmentList} />
-      </div>
+            <h1 className=" text-start text-white text-3xl m-3 mb-6 ">
+        Appointments
+      </h1>
+      <ConfigProvider
+        theme={{
+          components: {
+            Table: {
+              headerBg: "#17161C",
+              headerColor: "#fafafa",
+              rowHoverBg: "#292929",
+            },
+          },
+        }}
+      >
+        <Table
+          rowClassName={() =>
+            " text-white font-sans bg-[#17161C] text-sm sm:text-base md:text-lg"
+          } // Tailwind row styling
+          scroll={{
+            x: 1000, // Set horizontal scrolling width (px)
+            y: 300, // Set vertical scrollable height (px)
+          }}
+          pagination={false}
+          columns={column}
+          dataSource={appointmentList}
+        />
+      </ConfigProvider>
     </Layout>
   );
 };
