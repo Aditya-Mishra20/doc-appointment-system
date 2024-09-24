@@ -13,6 +13,7 @@
 - Check doctor availablity.
 - Book doctor at your time.
 - Get notification if your appointment approved/rejected.
+ Reviewing doctors.
 
 ### Doctors
 
@@ -55,6 +56,14 @@ npm run full
 * run the above command to start backend and frontend.
 
 
+## FIXES
+- Add Profile pages for user and admin
+- go to homepage directly from register page
+- table filters.
+- portfolio addition
+- add names instead of ids in appointment tables.
+- add feature for avatar , multer - cloudinary
+- doctor search option by name , specialization.
 
 
 
