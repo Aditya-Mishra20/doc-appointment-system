@@ -31,22 +31,22 @@ const Appointments = () => {
       title: "ID",
       dataIndex: "_id",
     },
-    {
-      title: "Name",
-      dataIndex: "name",
-      render: (text, record) => {
-        <span>
-          {`${record.doctorId.firstName} ${record.doctorId.lastName}`}
-        </span>;
-      },
-    },
-    {
-      title: "Phone Number",
-      dataIndex: "phoneNo",
-      render: (text, record) => {
-        <span>{record.doctorId.phoneNo}</span>;
-      },
-    },
+    // {
+    //   title: "Name",
+    //   dataIndex: "name",
+    //   render: (text, record) => {
+    //     <span>
+    //       {`${record.doctorId.firstName} ${record.doctorId.lastName}`}
+    //     </span>;
+    //   },
+    // },
+    // {
+    //   title: "Phone Number",
+    //   dataIndex: "phoneNo",
+    //   render: (text, record) => {
+    //     <span>{record.doctorId.phoneNo}</span>;
+    //   },
+    // },
     {
       title: "Date",
       dataIndex: "date",
