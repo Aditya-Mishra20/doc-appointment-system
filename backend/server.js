@@ -20,7 +20,7 @@ const app = express();
 app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors({
-    origin: 'https://docslot-doctor-appointment-system.vercel.app', // allow your frontend origin
+    origin: 'https://docslot-cyan.vercel.app', // allow your frontend origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // allowed methods
   credentials: true,
 }))
