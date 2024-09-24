@@ -8,7 +8,7 @@ const Users = () => {
   //get users
   const getUsers = async () => {
     try {
-      const res = await axios.get("https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/admin/getAllUsers", {
+      const res = await axios.get("https://doc-appointment-system-backend.vercel.app/api/v1/admin/getAllUsers", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

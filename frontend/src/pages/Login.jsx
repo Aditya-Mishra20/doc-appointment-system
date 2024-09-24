@@ -13,7 +13,7 @@ const Login = () => {
   const onFinishHandler = async (values) => {
     try {
       dispatch(showLoading());
-      const res = await axios.post("https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/user/login", values);
+      const res = await axios.post("https://doc-appointment-system-backend.vercel.app/api/v1/user/login", values);
       dispatch(hideLoading());
       if (res.data.success) {
         localStorage.setItem("token", res.data.token);

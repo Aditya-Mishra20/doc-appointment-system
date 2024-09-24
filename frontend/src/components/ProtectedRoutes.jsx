@@ -14,7 +14,7 @@ const ProtectedRoutes = ({ children }) => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/user/getUserData",
+        "https://doc-appointment-system-backend.vercel.app/api/v1/user/getUserData",
         {
           token: localStorage.getItem("token"),
         },

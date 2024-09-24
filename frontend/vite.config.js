@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server:{
     proxy:{
-      "/api":"https://docslot-doctor-appointment-system-backend.vercel.app"
+      "/api":"https://doc-appointment-system-backend.vercel.app"
     }
   },
   plugins: [react()],

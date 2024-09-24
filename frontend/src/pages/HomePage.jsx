@@ -10,7 +10,7 @@ const HomePage = () => {
   const getUserData = async () => {
     try {
       const res = await axios.post(
-        "https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/user/getUserData",
+        "https://doc-appointment-system-backend.vercel.app/api/v1/user/getUserData",
         {},
         {
           headers: {
@@ -25,7 +25,7 @@ const HomePage = () => {
 
   const getAllDoctorsList = async () => {
     try {
-      const res = await axios.get("https://docslot-doctor-appointment-system-backend.vercel.app/api/v1/user/getAllDoctors", {
+      const res = await axios.get("https://doc-appointment-system-backend.vercel.app/api/v1/user/getAllDoctors", {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
