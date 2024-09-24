@@ -164,7 +164,7 @@ const NotificationPage = () => {
     try {
       dispatch(showLoading());
       const res = await axios.post(
-        "https://doc-appointment-system-backend.vercel.app/api/v1/user//delete-all-notifications",
+        "https://doc-appointment-system-backend.vercel.app/api/v1/user/delete-all-notifications",
         {
           userId: user._id,
         },
