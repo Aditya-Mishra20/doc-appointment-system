@@ -3,6 +3,7 @@
 - DocSlot is a doctor appointment system.
 - You can find all types of doctor at one place to book an appointment.
 - If you are a doctor you can enlist yourself to find potential clients.
+- Checkout Deployment 👉 [GO LIVE](https://docslot-five.vercel.app/])
 
 ## Features
 
